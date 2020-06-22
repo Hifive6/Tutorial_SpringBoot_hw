@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Project</title>
+    <title>Sign up Page</title>
 </head>
 <body>
     <h1>Please enter a User</h1>
 
-    <form action="#" th:action="@{adduser}" th:object="${user}" method="POST">
+    <form action="#" th:action="@{/adduser}" th:object="${user}" method="POST">
+
         <label for="name">Name</label>
-        <input type="text" th:field="*{name}" placeholder="Name">
+        <input type="text" th:field="*{name}"  id="name" placeholder="Name">
         <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
 
         <label for="email">Email</label>
-        <input type="text" th:field="*{email}" placeholder="Email">
+        <input type="text" th:field="*{email}" id="email" placeholder="Email">
         <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
 
         <input type="submit" value="Add User">
